@@ -30,8 +30,8 @@ function onInit()
 	ColorManager.COLOR_HEALTH_GRADIENT_BOTTOM = { r = 192, g = 0, b = 0 }; -- Replaceable Channels: Health Gradient Bottom
 
 	ColorManager.COLOR_TOKEN_HEALTH_UNWOUNDED = "00C000"; -- Replaceable Color: Token Healthy
-	ColorManager.COLOR_TOKEN_HEALTH_DYING_OR_DEAD = "C0C0C0"; -- Replaceable Color: Token Dead
-	ColorManager.COLOR_TOKEN_HEALTH_UNCONSCIOUS = "8C3BFF"; -- Replaceable Color: Token Unconscious
+	ColorManager.COLOR_TOKEN_HEALTH_DYING_OR_DEAD = "909090"; -- Replaceable Color: Token Dead
+	ColorManager.COLOR_TOKEN_HEALTH_UNCONSCIOUS = "C7BAEB"; -- Replaceable Color: Token Unconscious
 
 	ColorManager.COLOR_TOKEN_HEALTH_SIMPLE_WOUNDED = "80C000"; -- Replaceable Color: Token Light Wounds
 	ColorManager.COLOR_TOKEN_HEALTH_SIMPLE_BLOODIED = "FF0000"; -- Replaceable Color: Token Bloodied
@@ -47,10 +47,13 @@ function onInit()
 
 	ColorManager.COLOR_ADJUSTED_HP = "D592FF"; -- Replaceable Color: Adjusted HP
 	ColorManager.COLOR_TEMP_HP = "69B7FF"; -- Replaceable Color: Temporary HP
-	ColorManager.COLOR_PRIMARY_FOREGROUND = "EBDDBA";  -- Replaceable Color: Primary Foreground
+	ColorManager.COLOR_PRIMARY_FOREGROUND = "FFF0CA";  -- Replaceable Color: Primary Foreground
 	ColorManager.COLOR_SECONDARY_FOREGROUND = "DDDDDD"; -- Replaceable Color: Secondary Foreground
 	ColorManager.COLOR_CALENDAR_BACKGROUND = "473C33"; -- Replaceable Color: Calendar Background
-	ColorManager.COLOR_CALENDAR_HOLIDAY = "FF6161"; -- Replaceable Color: Calendar Holiday
+	ColorManager.COLOR_CALENDAR_HOLIDAY = "F2AB76 "; -- Replaceable Color: Calendar Holiday
+	ColorManager.COLOR_CALENDAR_MONTH = "FF6161"; -- Replaceable Color: Calendar Month
+
+	ColorManager.COLOR_MODIFIED_VALUE = "F3D876"; -- Replacable Color: Modified VALUE
 
 	if not Bartender then
 		Interface.onHotkeyDrop = onHotkeyDrop;
