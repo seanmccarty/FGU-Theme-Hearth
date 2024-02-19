@@ -426,8 +426,6 @@
 		<bitmap file="graphics/pngs/imagebox.png" />
 		<offset>150,135,150,150</offset>
 		<insideoffset>0,0,20,22</insideoffset>
-		<!--Original <offset>150,135,150,150</offset>-->
-		<!--Orifinal <insideoffset>0,0,20,22</insideoffset>-->
 	</framedef>
 	<framedef name="imagebox_header">
 		<bitmap file="graphics/pngs/imagebox_header.png" />
@@ -840,6 +838,16 @@
 		<left rect="0,73,18,335" />
 		<bottomleft rect="0,408,18,86" />
 	</framedef>
+	<framedef name="windowmenubar_button">
+		<bitmap file="graphics/pngs/windowmenubar_button.png" />
+		<offset>4,4,4,4</offset>
+	</framedef>
+    <framedef name="windowmenubar_button_down">
+		<bitmap file="graphics/pngs/windowmenubar_button_down.png" />
+		<offset>4,4,4,4</offset>
+	</framedef>
+
+
 	<!-- Assets -->
 	<framedef name="tokenbagasset">
 		<bitmap file="graphics/pngs/fielddark.png" />

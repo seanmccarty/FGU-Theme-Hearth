@@ -57,8 +57,8 @@
 	<template name="imagedata_record_step">
 		<imagedatacontrol>
 			<invisible />
-			<color>988C8B</color> <!-- Replaceable Color: Primary Foreground Originally FFF0CA, but bug forced darker color so image data fields with white background can see numbers. -->
-			<backcolor>222121</backcolor> <!-- Replaceable Color: Primary Background Originally 232323, but bug forced darker background so darker font/primary color shows better. -->
+			<color>FFF0CA</color> <!-- Replaceable Color: Primary Foreground -->
+			<backcolor>232323</backcolor> <!-- Replaceable Color: Primary Background -->
 		</imagedatacontrol>
 	</template>
 	<template name="imagepaneldata_record_step">
@@ -382,48 +382,6 @@
 		</windowmenubar>
 	</template>
 
-    <!-- windowmenubar -->
-    <template name="windowmenubar">
-		<subwindow>
-			<anchored position="insidetop" />
-			<class>windowmenubar</class>
-			<activate />
-		</subwindow>
-	</template>
-	<windowclass name="windowmenubar">
-		<script>
-			function onInit()
-				--WindowMenuManager.initMenuButtonBar(self);
-			end
-		</script>
-		<sheetdata>
-			<genericcontrol name="leftanchor">
-				<anchored position="insidetopleft" height="16" /> <!-- Sized to Hearth icon size. -->
-			</genericcontrol>
-			<genericcontrol name="rightanchor">
-				<anchored position="insidetopright" height="16" /> <!-- Sized to Hearth icon size. -->
-			</genericcontrol>
-            <!-- TODO: Quick fix to allow more time to do all the frames. -->
-            <close>
-                <anchored>
-                    <top offset="0" />
-                    <right offset="0" />
-                </anchored>
-            </close>
-		</sheetdata>
-	</windowclass>
-
-	<!-- Frame: imagepanel -->
-	<template name="close_imagepanel">
-		<close>
-			<anchored>
-				<top offset="1" />
-				<right offset="-2" />
-			</anchored>
-			<invisible />
-		</close>
-	</template>
-
 	<!-- Frame: ctbox -->
 	<template name="close_ctbox">
 		<close>
@@ -462,24 +420,91 @@
 		</close>
 	</template>
 
-	<!-- Frame: storybox (i.e. Story) -->
-	<template name="close_storybox">
-		<close>
-			<anchored>
-				<top offset="6" />
-				<right offset="-8" />
-			</anchored>
-		</close>
+   	<template name="windowmenubar_imagebox">
+		<windowmenubar>
+			<anchored offset="-14,12" /> <!-- left-/right+,up-/down+, menu seems to ignore left/right here. -->
+		</windowmenubar>
+	</template>
+	<template name="windowmenubar_recordsheet">
+		<windowmenubar>
+			<anchored offset="-14,12" />
+		</windowmenubar>
+	</template>
+	<template name="windowmenubar_storybox">
+		<windowmenubar>
+			<anchored offset="-11,8" />
+		</windowmenubar>
+	</template>
+    
+    <!-- Anchors -->
+	<!-- NOTE: Added extra 2 pixels to height to ensure button frames do not extend past bottom of subwindow -->
+	<template name="toolbar_anchor_left">
+		<genericcontrol name="leftanchor">
+			<anchored position="insidetopleft" offset="-2,-2" height="22" />
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="toolbar_anchor_right">
+		<genericcontrol name="rightanchor">
+			<anchored position="insidetopright" offset="-2,-2" height="22" />
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="image_toolbar_anchor_left">
+		<genericcontrol name="leftanchor">
+			<anchored position="insidetopleft" offset="3,3" height="22" />
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="image_toolbar_anchor_right">
+		<genericcontrol name="rightanchor">
+			<anchored position="insidetopright" offset="3,3" height="22" />
+			<disabled />
+		</genericcontrol>
 	</template>
 
-	<!-- Frame: imagebox -->
-	<template name="close_imagebox">
-		<close>
-			<anchored>
-				<top offset="24" />
-				<right offset="-28" />
+	<template name="icon_record_type">
+		<genericcontrol>
+			<anchored to="leftanchor" width="20" height="20">
+				<top />
+				<left relation="relative" offset="5" postoffset="5" />
 			</anchored>
-		</close>
+			<frame name="fieldlight" offset="5,5,5,5" />
+			<invisible />
+			<script>
+				function onInit()
+					self.updateDisplay();
+				end
+				function getRecordType()
+					return WindowManager.getRecordType(window);
+				end
+				function updateDisplay()
+					local sRecordType = self.getRecordType();
+					if sRecordType ~= "" then
+						local sIcon = "sidebar_icon_recordtype_" .. sRecordType;
+						if Interface.isIcon(sIcon) then
+							setIcon(sIcon);
+						else
+							setIcon("sidebar_icon_default");
+						end
+						if Interface.getFontColor then
+							local sFont = string.format("%s_header", UtilityManager.getTopWindow(window).getFrame());
+							if not Interface.isFont(sFont) then
+								sFont = "recordsheet_header";
+							end
+							--setColor(Interface.getFontColor(sFont));
+							setColor("FFF0CA");
+						else
+							setColor("FFF0CA")
+						end
+						setTooltipText(LibraryData.getSingleDisplayText(sRecordType));
+						setVisible(true);
+					else
+						setVisible(false);
+					end
+				end
+			</script>
+		</genericcontrol>
 	</template>
 
 	<!-- Frame: charsheethelper -->
@@ -761,7 +786,7 @@
 	<string name="image_grid_hexcolumn">Hex Column Grid</string>
 	<string name="image_grid_square">Squre Grid</string>
 	<string name="image_grid_isometric">Isometric Grid</string>
-	<windowclass name="imagewindow" merge="join" version="&gt;=4">
+	<!-- <windowclass name="imagewindow" merge="join" version="&gt;=4">
 		<script>
 			function onInit()
 				if super and super.onInit then
@@ -798,7 +823,7 @@
 				end
 			end
 		</script>
-	</windowclass>
+	</windowclass> -->
 
 	<!-- Source: campaign/campaign_chars.xml -->
 	<windowclass name="charselect_host_entry" merge="join">
@@ -824,7 +849,71 @@
 	<windowclass name="client_ct_entry" merge="join">
 		<script file="rulesets/scripts/ct_entry_colors.lua" />
 	</windowclass>
-    
+
+	<windowclass name="imagewindow_toolbar" merge="delete">
+	</windowclass>
+
+    <!-- TODO: From CoreRPG, record_image.xml. Overridden to use custom anchors to prevent image sub toolbar from shrinking small when others are adjusted -->
+	<windowclass name="imagewindow_toolbar">
+		<script file="campaign/scripts/imagewindow_toolbar.lua" />
+		<sheetdata>
+			<image_toolbar_anchor_left />
+			<image_toolbar_anchor_right />
+
+			<toolbar_toggle_right name="image_preview">
+				<initbyname />
+			</toolbar_toggle_right>
+			<toolbar_toggle_right name="image_tokenlock">
+				<initbyname />
+			</toolbar_toggle_right>
+			<toolbar_toggle_right name="image_shortcut">
+				<initbyname />
+			</toolbar_toggle_right>
+			<toolbar_action_right name="image_deathmarker_clear">
+				<initbyname />
+			</toolbar_action_right>
+			<toolbar_separator_right name="image_separator_mode" />
+
+			<toolbar_action_right name="image_target_clear">
+				<initbyname />
+			</toolbar_action_right>
+			<toolbar_action_right name="image_target_friend">
+				<initbyname />
+			</toolbar_action_right>
+			<toolbar_action_right name="image_target_foe">
+				<initbyname />
+			</toolbar_action_right>
+			<toolbar_toggle_right name="image_target_select">
+				<initbyname />
+			</toolbar_toggle_right>
+			<toolbar_toggle_right name="image_select">
+				<initbyname />
+			</toolbar_toggle_right>
+			<toolbar_separator_right name="image_separator_target" />
+
+			<toolbar_toggle_right name="image_erase">
+				<initbyname />
+			</toolbar_toggle_right>
+			<toolbar_toggle_right name="image_draw">
+				<initbyname />
+			</toolbar_toggle_right>
+			<toolbar_toggle_right name="image_unmask">
+				<initbyname />
+			</toolbar_toggle_right>
+			<toolbar_separator_right name="image_separator_draw" />
+
+			<toolbar_toggle_right name="image_ping">
+				<initbyname />
+			</toolbar_toggle_right>
+			<toolbar_toggle_right name="image_view_camera">
+				<initbyname />
+			</toolbar_toggle_right>
+			<toolbar_action_right name="image_zoomtofit">
+				<initbyname />
+			</toolbar_action_right>
+		</sheetdata>
+	</windowclass>
+
     <!-- Chat window padding adjustments. Source: template_windows.xml -->
     <template name="anchor_content_chatbox_top">
         <genericcontrol name="contentanchor">

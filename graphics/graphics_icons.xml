@@ -171,6 +171,7 @@
 	<icon name="button_sizedown_down" file="graphics/pngs/button_sizedown_down.png" />
 	<icon name="button_sizedown_hover" file="graphics/pngs/button_sizedown_hover.png" />
 	<icon name="button_link" file="graphics/pngs/button_link.png" />
+   	<icon name="button_toolbar_link" file="graphics/pngs/button_link.png" />
 	<icon name="button_link_down" file="graphics/pngs/button_link_down.png" />
 	<icon name="button_link_empty" file="graphics/pngs/button_link_empty.png" />
 	<icon name="button_link_share" file="graphics/pngs/button_link_share.png" />
