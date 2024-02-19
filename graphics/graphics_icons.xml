@@ -29,6 +29,7 @@
 
 	<icon name="sidebar_icon_link_library" file="graphics/pngs/sidebar_icon_modules.png" />
 	<icon name="sidebar_icon_link_tokenbag" file="graphics/pngs/sidebar_icon_assets.png" />
+	<icon name="sidebar_icon_link_story_book" file="graphics/pngs/sidebar_icon_story.png" />
 
 	<icon name="sidebar_icon_recordtype_battle" file="graphics/pngs/sidebar_icon_battle.png" />
 	<icon name="sidebar_icon_recordtype_charsheet" file="graphics/pngs/sidebar_icon_charsheet.png" />

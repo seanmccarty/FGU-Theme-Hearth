@@ -57,6 +57,7 @@ function onInit()
 
     ColorManager.setWindowMenuIconColor(ColorManager.COLOR_SECONDARY_FOREGROUND); -- Set the icon color of window toolbars
 	ColorManager.setButtonIconColor(ColorManager.COLOR_SECONDARY_FOREGROUND);
+	ColorManager.setButtonTextColor(ColorManager.COLOR_SECONDARY_FOREGROUND);
 
 	if not Bartender then
 		Interface.onHotkeyDrop = onHotkeyDrop;

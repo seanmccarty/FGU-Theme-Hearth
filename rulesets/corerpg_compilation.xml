@@ -420,91 +420,73 @@
 		</close>
 	</template>
 
-   	<template name="windowmenubar_imagebox">
+	<template name="windowmenubar_utilitybox">
 		<windowmenubar>
-			<anchored offset="-14,12" /> <!-- left-/right+,up-/down+, menu seems to ignore left/right here. -->
+			<anchored offset="-9,11" /> <!-- Orig: 0,0 -->
+		</windowmenubar>
+	</template>
+	<template name="windowmenubar_tokenbag"> <!-- Orig: 0,0 -->
+		<windowmenubar>
+			<anchored offset="-12,11" />
+		</windowmenubar>
+	</template>
+	<template name="windowmenubar_partysheet">
+		<windowmenubar>
+			<anchored offset="-15,10" /> <!-- Orig: -1,1 -->
+		</windowmenubar>
+	</template>
+	<template name="windowmenubar_referencelist">
+		<windowmenubar>
+			<anchored offset="-12,11" /> <!-- Orig: -3,3 -->
+		</windowmenubar>
+	</template>
+	<template name="windowmenubar_charselect"> <!-- Orig: -1,1 -->
+		<windowmenubar>
+			<anchored offset="-12,11" />
 		</windowmenubar>
 	</template>
 	<template name="windowmenubar_recordsheet">
 		<windowmenubar>
-			<anchored offset="-14,12" />
+			<anchored offset="-11,9" />
+		</windowmenubar>
+	</template>
+   	<template name="windowmenubar_imagebox">
+		<windowmenubar>
+			<anchored offset="-12,11" /> <!-- left-/right+,up-/down+, menu seems to ignore left/right here. -->
 		</windowmenubar>
 	</template>
 	<template name="windowmenubar_storybox">
 		<windowmenubar>
-			<anchored offset="-11,8" />
+			<anchored offset="-7,4" />
 		</windowmenubar>
 	</template>
     
     <!-- Anchors -->
-	<!-- NOTE: Added extra 2 pixels to height to ensure button frames do not extend past bottom of subwindow -->
-	<template name="toolbar_anchor_left">
-		<genericcontrol name="leftanchor">
-			<anchored position="insidetopleft" offset="-2,-2" height="22" />
-			<disabled />
-		</genericcontrol>
-	</template>
-	<template name="toolbar_anchor_right">
-		<genericcontrol name="rightanchor">
-			<anchored position="insidetopright" offset="-2,-2" height="22" />
-			<disabled />
-		</genericcontrol>
-	</template>
-	<template name="image_toolbar_anchor_left">
-		<genericcontrol name="leftanchor">
-			<anchored position="insidetopleft" offset="3,3" height="22" />
-			<disabled />
-		</genericcontrol>
-	</template>
-	<template name="image_toolbar_anchor_right">
-		<genericcontrol name="rightanchor">
-			<anchored position="insidetopright" offset="3,3" height="22" />
-			<disabled />
-		</genericcontrol>
-	</template>
-
-	<template name="icon_record_type">
-		<genericcontrol>
-			<anchored to="leftanchor" width="20" height="20">
-				<top />
-				<left relation="relative" offset="5" postoffset="5" />
+	<template name="anchor_content_imagebox_top">
+		<genericcontrol name="contentanchor">
+			<anchored height="0">
+				<top offset="33" />
+				<left offset="10" />
+				<right offset="-10" />
 			</anchored>
-			<frame name="fieldlight" offset="5,5,5,5" />
-			<invisible />
-			<script>
-				function onInit()
-					self.updateDisplay();
-				end
-				function getRecordType()
-					return WindowManager.getRecordType(window);
-				end
-				function updateDisplay()
-					local sRecordType = self.getRecordType();
-					if sRecordType ~= "" then
-						local sIcon = "sidebar_icon_recordtype_" .. sRecordType;
-						if Interface.isIcon(sIcon) then
-							setIcon(sIcon);
-						else
-							setIcon("sidebar_icon_default");
-						end
-						if Interface.getFontColor then
-							local sFont = string.format("%s_header", UtilityManager.getTopWindow(window).getFrame());
-							if not Interface.isFont(sFont) then
-								sFont = "recordsheet_header";
-							end
-							--setColor(Interface.getFontColor(sFont));
-							setColor("FFF0CA");
-						else
-							setColor("FFF0CA")
-						end
-						setTooltipText(LibraryData.getSingleDisplayText(sRecordType));
-						setVisible(true);
-					else
-						setVisible(false);
-					end
-				end
-			</script>
+			<disabled />
 		</genericcontrol>
+	</template>
+	<template name="sub_content_toolbar_top">
+		<sub_content_toolbar_base>
+			<anchored>
+				<top relation="relative" offset="5" postoffset="10" />
+			</anchored>
+		</sub_content_toolbar_base>
+	</template>
+	<template name="string_record_header_name_image">
+		<string_record_header_name>
+			<anchored height="24">
+				<top relation="current" offset="3" />
+			</anchored>
+			<font>imagebox_header</font>
+			<multilinespacing merge="delete" />
+		</string_record_header_name>
 	</template>
 
 	<!-- Frame: charsheethelper -->
@@ -836,7 +818,6 @@
 		</script>
 	</windowclass>
 
-
 	<!-- Re-color is moved to script instead of xml to support rulesets that don't use the temphp box -->
 	<windowclass name="charsheet_main" merge="join">
 		<script file="rulesets/scripts/charsheet_main_colors.lua" />
@@ -848,70 +829,6 @@
 	</windowclass>
 	<windowclass name="client_ct_entry" merge="join">
 		<script file="rulesets/scripts/ct_entry_colors.lua" />
-	</windowclass>
-
-	<windowclass name="imagewindow_toolbar" merge="delete">
-	</windowclass>
-
-    <!-- TODO: From CoreRPG, record_image.xml. Overridden to use custom anchors to prevent image sub toolbar from shrinking small when others are adjusted -->
-	<windowclass name="imagewindow_toolbar">
-		<script file="campaign/scripts/imagewindow_toolbar.lua" />
-		<sheetdata>
-			<image_toolbar_anchor_left />
-			<image_toolbar_anchor_right />
-
-			<toolbar_toggle_right name="image_preview">
-				<initbyname />
-			</toolbar_toggle_right>
-			<toolbar_toggle_right name="image_tokenlock">
-				<initbyname />
-			</toolbar_toggle_right>
-			<toolbar_toggle_right name="image_shortcut">
-				<initbyname />
-			</toolbar_toggle_right>
-			<toolbar_action_right name="image_deathmarker_clear">
-				<initbyname />
-			</toolbar_action_right>
-			<toolbar_separator_right name="image_separator_mode" />
-
-			<toolbar_action_right name="image_target_clear">
-				<initbyname />
-			</toolbar_action_right>
-			<toolbar_action_right name="image_target_friend">
-				<initbyname />
-			</toolbar_action_right>
-			<toolbar_action_right name="image_target_foe">
-				<initbyname />
-			</toolbar_action_right>
-			<toolbar_toggle_right name="image_target_select">
-				<initbyname />
-			</toolbar_toggle_right>
-			<toolbar_toggle_right name="image_select">
-				<initbyname />
-			</toolbar_toggle_right>
-			<toolbar_separator_right name="image_separator_target" />
-
-			<toolbar_toggle_right name="image_erase">
-				<initbyname />
-			</toolbar_toggle_right>
-			<toolbar_toggle_right name="image_draw">
-				<initbyname />
-			</toolbar_toggle_right>
-			<toolbar_toggle_right name="image_unmask">
-				<initbyname />
-			</toolbar_toggle_right>
-			<toolbar_separator_right name="image_separator_draw" />
-
-			<toolbar_toggle_right name="image_ping">
-				<initbyname />
-			</toolbar_toggle_right>
-			<toolbar_toggle_right name="image_view_camera">
-				<initbyname />
-			</toolbar_toggle_right>
-			<toolbar_action_right name="image_zoomtofit">
-				<initbyname />
-			</toolbar_action_right>
-		</sheetdata>
 	</windowclass>
 
     <!-- Chat window padding adjustments. Source: template_windows.xml -->
