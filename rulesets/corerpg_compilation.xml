@@ -482,7 +482,7 @@
 	<template name="string_record_header_name_image">
 		<string_record_header_name>
 			<anchored height="24">
-				<top relation="current" offset="3" />
+				<top relation="current" offset="8" />
 			</anchored>
 			<font>imagebox_header</font>
 			<multilinespacing merge="delete" />
