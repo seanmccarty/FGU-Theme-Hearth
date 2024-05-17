@@ -43,7 +43,7 @@
 	</font>
 	<font name="token_ordinal">
 		<ttf file="graphics/fonts/Roboto-Bold.ttf" name="Roboto Bold" size="16" />
-		<color value="#DDDDDD" /> <!-- Replaceable Color: Secondary Foreground -->
+		<color value="#000000" />  <!-- WORKAROUND v2.9.22: Changed height background to light color. -->
 	</font>
 	<font name="token_height">
 		<ttf file="graphics/fonts/Roboto-Bold.ttf" name="Roboto Bold" size="24" />
