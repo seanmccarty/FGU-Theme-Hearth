@@ -784,44 +784,6 @@
 	<string name="image_grid_hexcolumn">Hex Column Grid</string>
 	<string name="image_grid_square">Squre Grid</string>
 	<string name="image_grid_isometric">Isometric Grid</string>
-	<!-- <windowclass name="imagewindow" merge="join" version="&gt;=4">
-		<script>
-			function onInit()
-				if super and super.onInit then
-					super.onInit()
-				end
-				registerMenuItem(Interface.getString("windowshare"), "windowsharegroup", 7);
-				registerMenuItem(Interface.getString("windowshare"), "windowshare", 7, 7);
-				registerMenuItem(Interface.getString("windowunshare"), "windowunshare", 7, 5);
-
-				registerMenuItem(Interface.getString("imagesizefill"), "imagesizefill", 3, 4);
-
-				registerMenuItem(Interface.getString("imagesizefill"), "imagesizefill", 3, 4);
-
-				registerMenuItem(Interface.getString("image_grid_isometric"), "image_grid_isometric", 4, 6, 4);
-				registerMenuItem(Interface.getString("image_grid_square"), "image_grid_square", 4, 6, 5);
-				registerMenuItem(Interface.getString("image_grid_hexcolumn"), "image_grid_hexcolumn", 4, 6, 6);
-				registerMenuItem(Interface.getString("image_grid_hexrow"), "image_grid_hexrow", 4, 6, 7);
-			end
-
-			function onMenuSelection(item, subitem)
-				if super and super.onMenuSelection then
-					super.onMenuSelection(item, subitem)
-				end
-				if item == 7 then
-					if subitem == 5 then
-						if not Session.IsHost then return; end
-						local node = getDatabaseNode()
-						if node.isPublic() then
-							node.setPublic(false);
-						else
-							node.removeAllHolders(true);
-						end
-					end
-				end
-			end
-		</script>
-	</windowclass> -->
 
 	<!-- Source: campaign/campaign_chars.xml -->
 	<windowclass name="charselect_host_entry" merge="join">
