@@ -831,4 +831,12 @@
 			<disabled />
 		</genericcontrol>
 	</template>
+
+    <windowclass name="treasureparcel" merge="join">
+		<sheetdata>
+			<windowmenubar_recordsheet name="menubar">
+			    <anchored offset="-11,6" />
+            </windowmenubar_recordsheet>
+		</sheetdata>
+	</windowclass>
 </root>
