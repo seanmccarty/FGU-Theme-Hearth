@@ -785,6 +785,14 @@
 	<string name="image_grid_square">Squre Grid</string>
 	<string name="image_grid_isometric">Isometric Grid</string>
 
+	<!-- Source: campaign/record_char.xml -->
+	<windowclass name="charsheet" merge="join">
+        <sizelimits>
+			<minimum width="525" height="568" />
+			<dynamic />
+		</sizelimits>
+	</windowclass>
+
 	<!-- Source: campaign/campaign_chars.xml -->
 	<windowclass name="charselect_host_entry" merge="join">
 		<script>

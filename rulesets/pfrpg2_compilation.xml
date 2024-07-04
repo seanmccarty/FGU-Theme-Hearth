@@ -53,6 +53,14 @@
 			</script>
 		</windowclass>
 
+		<!-- Source: campaign/record_char.xml -->
+		<windowclass name="charsheet" merge="join">
+			<sizelimits>
+				<minimum width="570" height="568" />
+				<dynamic />
+			</sizelimits>
+		</windowclass>
+
 		<!-- script in windowclass messes with color application, need a fix.
 
 		<windowclass name="spelldesc_header" merge="join">
