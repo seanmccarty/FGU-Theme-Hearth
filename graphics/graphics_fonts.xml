@@ -686,7 +686,7 @@
 	<!-- Horizontal tab font -->
 	<font name="tabfont">
 		<ttf file="graphics/fonts/Roboto-Medium.ttf" name="Roboto Medium" size="16" />
-		<color value="#FFFFF0CA" /> <!-- Replacable Color: Primary Foreground -->
+		<color value="#FFFFF0CA" /> <!-- Replacable Color: Primary Foreground, leading FF necessary for tabfont else parse fails and black font is used. -->
 	</font>
 
 	<font name="sheettextfaded">
