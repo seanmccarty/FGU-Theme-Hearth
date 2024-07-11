@@ -15,6 +15,11 @@
 	<icon name="data" file="graphics/tabs_ose2/tab_data.png" />
 	<icon name="tab_rolls" file="graphics/tabs_ose2/tab_rolls.png" />
 
+    <!-- Restore the larger portrait images that newer OSE2 rulesets made smaller. -->
+	<icon name="charlist_mask" file="graphics/portraits_ose2/portrait_mask.png" />
+	<icon name="portraittoken_mask" file="graphics/portraits_ose2/portrait_token_mask.png" />
+	<icon name="portraitchat_mask" file="graphics/portraits_ose2/portrait_chat_mask.png" />
+
 	<font name="OSEsmall" merge="join">
 		<color value="#FFF0CA" />
 	</font>

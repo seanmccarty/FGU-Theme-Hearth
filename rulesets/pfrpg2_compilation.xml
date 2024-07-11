@@ -56,7 +56,7 @@
 		<!-- Source: campaign/record_char.xml -->
 		<windowclass name="charsheet" merge="join">
 			<sizelimits>
-				<minimum width="570" height="568" />
+				<minimum width="570" height="625" />
 				<dynamic />
 			</sizelimits>
 		</windowclass>
