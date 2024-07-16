@@ -50,7 +50,7 @@ function onInit()
 	ColorManager.COLOR_PRIMARY_FOREGROUND = "FFF0CA";  -- Replaceable Color: Primary Foreground
 	ColorManager.COLOR_SECONDARY_FOREGROUND = "DDDDDD"; -- Replaceable Color: Secondary Foreground
 	ColorManager.COLOR_CALENDAR_BACKGROUND = "473C33"; -- Replaceable Color: Calendar Background
-	ColorManager.COLOR_CALENDAR_HOLIDAY = "F2AB76 "; -- Replaceable Color: Calendar Holiday
+	ColorManager.COLOR_CALENDAR_HOLIDAY = "F2AB76"; -- Replaceable Color: Calendar Holiday
 	ColorManager.COLOR_CALENDAR_MONTH = "FF6161"; -- Replaceable Color: Calendar Month
 
 	ColorManager.COLOR_MODIFIED_VALUE = "F3D876"; -- Replacable Color: Modified VALUE
