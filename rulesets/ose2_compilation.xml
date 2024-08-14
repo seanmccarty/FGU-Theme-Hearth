@@ -16,7 +16,6 @@
 	<icon name="tab_rolls" file="graphics/tabs_ose2/tab_rolls.png" />
 
     <!-- Restore the larger portrait images that newer OSE2 rulesets made smaller. -->
-	<icon name="charlist_mask" file="graphics/portraits_ose2/portrait_mask.png" />
 	<icon name="portraittoken_mask" file="graphics/portraits_ose2/portrait_token_mask.png" />
 	<icon name="portraitchat_mask" file="graphics/portraits_ose2/portrait_chat_mask.png" />
 
@@ -194,26 +193,5 @@
 		<sizelimits>
 			<minimum width="520" />
 		</sizelimits>
-		<sheetdata>
-            <label_ct_host_rounds name="label_round" merge="join">
-                <anchored height="24">
-                    <bottom offset="-20" />
-                    <right parent="contentanchor" offset="-97" />
-                </anchored>
-            </label_ct_host_rounds>
-			<number_ct_host_rounds name="round" merge="join">
-                <anchored width="40" height="24">
-                    <bottom offset="-20" />
-                    <right parent="contentanchor" offset="-40" />
-                </anchored>
-            </number_ct_host_rounds>
-            <button_turn name="button_turn" merge="join">
-                <bounds merge="delete" />
-                <anchored width="25" height="25">
-                    <bottom offset="-19" />
-                    <right parent="contentanchor" offset="-155" />
-                </anchored>
-            </button_turn>
-		</sheetdata>
 	</windowclass>
 </root>
