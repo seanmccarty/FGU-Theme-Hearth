@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- Restore the portrait frame by shrinking the mask slightly. -->
-	<icon name="charlist_mask" file="graphics/pngs/portrait_mask.png" />
-	<icon name="portraittoken_mask" file="graphics/pngs/portrait_token_mask.png" />
-	<icon name="portraitchat_mask" file="graphics/pngs/portrait_chat_mask.png" />
-
 	<!-- Source: campaign/template_campaign.xml -->
 	<template name="button_imagewindow_sizeup">
 		<button_window_sizeup>
@@ -375,7 +370,7 @@
 	</template>
 	<template name="windowmenubar_charselect">
 		<windowmenubar>
-			<anchored offset="-16,15" />
+			<anchored offset="-12,11" />
 		</windowmenubar>
 	</template>
 
@@ -399,8 +394,84 @@
 	</template>
 	<template name="windowmenubar_referencelist">
 		<windowmenubar>
-			<anchored offset="-16,15" />
+			<anchored offset="-12,11" />
 		</windowmenubar>
+	</template>
+	<template name="anchor_content_referencelist_top">
+		<genericcontrol name="contentanchor">
+			<anchored height="0">
+				<top offset="36" />
+				<left offset="15" />
+				<right offset="-15" />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="anchor_content_referencelist_bottom">
+		<genericcontrol name="bottomanchor">
+			<anchored to="contentanchor" height="18">
+				<bottom parent="" />
+				<left />
+				<right />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="resize_referencelist">
+		<resize>
+			<anchored>
+				<right offset="0" />
+				<bottom offset="0" />
+			</anchored>
+		</resize>
+	</template>
+	<template name="filter_content_bottom">
+		<filter name="filter">
+			<anchored to="bottomanchor" height="20">
+				<bottom parent="bottomanchor" relation="relative" offset="-5" postoffset="-10" />
+				<left offset="30" />
+				<right offset="-40" />
+			</anchored>
+		</filter>
+	</template>
+	<template name="filter_list_content_controls">
+		<filter name="filter">
+			<anchored to="rightanchor" height="20">
+				<top />
+				<left parent="area_controls" offset="30" />
+				<right relation="relative" offset="-20" />
+			</anchored>
+		</filter>
+	</template>
+
+	<!-- Frame: charselect -->
+	<template name="anchor_content_charselect_top">
+		<genericcontrol name="contentanchor">
+			<anchored height="0">
+				<top offset="70" />
+				<left offset="30" />
+				<right offset="-30" />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="anchor_content_charselect_bottom">
+		<genericcontrol name="bottomanchor">
+			<anchored to="contentanchor" height="18">
+				<bottom parent="" />
+				<left />
+				<right />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="resize_charselect">
+		<resize>
+			<anchored>
+				<right offset="0" />
+				<bottom offset="0" />
+			</anchored>
+		</resize>
 	</template>
 
 	<!-- Frame: ctbox -->
@@ -481,16 +552,6 @@
 			<anchored offset="-15,10" /> <!-- Orig: -1,1 -->
 		</windowmenubar>
 	</template>
-	<template name="windowmenubar_referencelist">
-		<windowmenubar>
-			<anchored offset="-12,11" /> <!-- Orig: -3,3 -->
-		</windowmenubar>
-	</template>
-	<template name="windowmenubar_charselect"> <!-- Orig: -1,1 -->
-		<windowmenubar>
-			<anchored offset="-12,11" />
-		</windowmenubar>
-	</template>
 	<template name="windowmenubar_recordsheet">
 		<windowmenubar>
 			<anchored offset="-11,9" />
@@ -533,6 +594,33 @@
 			<font>imagebox_header</font>
 			<multilinespacing merge="delete" />
 		</string_record_header_name>
+	</template>
+
+	<!-- Frame: storybox -->
+	<template name="windowtitlebar_storybox">
+		<windowtitlebar>
+			<anchored offset="0,0" />
+		</windowtitlebar>
+	</template>
+	<template name="anchor_content_storybox_top">
+		<genericcontrol name="contentanchor">
+			<anchored height="0">
+				<top offset="30" />
+				<left offset="10" />
+				<right offset="-10" />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
+	<template name="anchor_content_storybox_bottom">
+		<genericcontrol name="bottomanchor">
+			<anchored to="contentanchor" height="10">
+				<bottom parent="" />
+				<left />
+				<right />
+			</anchored>
+			<disabled />
+		</genericcontrol>
 	</template>
 
 	<!-- Frame: charsheethelper -->
