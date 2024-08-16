@@ -536,6 +536,16 @@
 			</anchored>
 		</close>
 	</template>
+	<template name="sub_charsheet">
+		<subwindow>
+			<anchored>
+				<left offset="15" />
+				<top parent="overview" anchor="bottom" offset="0" />
+				<right offset="-22" />
+				<bottom offset="-20" />
+			</anchored>
+		</subwindow>
+	</template>
 
 	<template name="windowmenubar_utilitybox">
 		<windowmenubar>
@@ -941,9 +951,26 @@
 			<invisible />
 		</genericcontrol>
 	</template>
+	<template name="spacer_ctentry_active_bottom">
+		<genericcontrol name="active_spacer_bottom">
+			<anchored width="0" height="0">
+				<top parent="active_spacer_top" anchor="bottom" relation="relative" />
+				<left />
+			</anchored>
+			<invisible />
+		</genericcontrol>
+	</template>
+	<template name="spacer_ctentry_middle">
+		<genericcontrol name="spacer">
+			<anchored width="0" height="0">
+				<top parent="active_spacer_top" anchor="bottom" relation="relative" />
+				<left />
+			</anchored>
+		</genericcontrol>
+	</template>
 	<template name="button_ctentry_active_base">
 		<buttonfield>
-			<anchored width="33" height="40">
+			<anchored width="33" height="36">
 				<top parent="active_spacer_top" anchor="bottom" />
 				<left offset="-3" />
 			</anchored>
@@ -1017,6 +1044,11 @@
 			</anchored>
 		</resize>
 	</template>
+	<windowclass name="ct_entry" merge="join">
+		<sizelimits>
+			<minimum height="25" />
+		</sizelimits>
+	</windowclass>
 
     <!-- Chat window padding adjustments. Source: template_windows.xml -->
     <template name="anchor_content_chatbox_top">
