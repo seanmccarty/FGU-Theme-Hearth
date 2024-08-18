@@ -947,13 +947,13 @@
 
 	<template name="spacer_ctentry_active_top">
 		<genericcontrol name="active_spacer_top">
-			<anchored position="insidetopleft" width="0" height="1" />
+			<anchored position="insidetopleft" width="0" height="1" /> <!-- Original height 5-->
 			<invisible />
 		</genericcontrol>
 	</template>
 	<template name="spacer_ctentry_active_bottom">
 		<genericcontrol name="active_spacer_bottom">
-			<anchored width="0" height="0">
+			<anchored width="0" height="2">
 				<top parent="active_spacer_top" anchor="bottom" relation="relative" />
 				<left />
 			</anchored>
@@ -971,7 +971,7 @@
 	<template name="button_ctentry_active_base">
 		<buttonfield>
 			<anchored width="33" height="36">
-				<top parent="active_spacer_top" anchor="bottom" />
+				<top parent="active_spacer_top" anchor="bottom" offset="6" />
 				<left offset="-3" />
 			</anchored>
 			<state icon="ct_passive" />
@@ -980,8 +980,8 @@
 	</template>
 	<template name="token_ctentry_base">
 		<tokenfield>
-			<anchored to="leftanchor" width="25" height="25">
-				<top offset="-3" />
+			<anchored to="leftanchor" width="36" height="36">
+				<top offset="-4" />
 				<left relation="relative" offset="0" postoffset="13" />
 			</anchored>
 			<empty>token_empty</empty>
@@ -990,7 +990,7 @@
 	</template>
 	<template name="button_ct_entry_isidentified">
 		<buttonfield>
-			<anchored to="token" position="righthigh" offset="2,0" width="20" height="16" />
+			<anchored to="token" position="righthigh" offset="2,2" width="20" height="16" />
 			<frame name="tempmodmini" />
 			<state icon="button_toolbar_id_false" tooltipres="tooltip_nonid" />
 			<state icon="button_toolbar_id_true" tooltipres="tooltip_id" />
@@ -1010,7 +1010,7 @@
 	</template>
 	<template name="button_ct_entry_tokenvis">
 		<buttonfield>
-			<anchored to="token" position="rightlow" offset="2,-5" width="20" height="16" />
+			<anchored to="token" position="rightlow" offset="2,3" width="20" height="16" />
 			<frame name="tempmodmini" />
 			<state icon="button_toolbar_visibility_off" tooltipres="ct_tooltip_shownpcon" />
 			<state icon="button_toolbar_visibility_on" tooltipres="ct_tooltip_shownpcoff" />
@@ -1028,7 +1028,7 @@
 	<template name="string_ct_entry_name">
 		<string_ct>
 			<anchored to="leftanchor" height="20">
-				<top parent="active_spacer_top" anchor="bottom"  relation="relative" offset="10" />
+				<top parent="active_spacer_top" anchor="bottom"  relation="relative" offset="7" />
 				<left relation="relative" offset="11" />
 				<right parent="rightanchor" relation="relative" offset="-10" />
 			</anchored>
@@ -1049,6 +1049,31 @@
 			<minimum height="25" />
 		</sizelimits>
 	</windowclass>
+	<!-- Summary string sections -->
+	<template name="string_ct_entry_summary">
+		<stringcontrol>
+			<anchored>
+				<top parent="active_spacer_top" anchor="bottom" relation="relative" offset="5" />
+				<left offset="90" />
+				<right offset="-8" />
+			</anchored>
+			<multilinespacing>16</multilinespacing>
+			<font>sheettext</font>
+			<static />
+			<nodrag />
+			<invisible />
+		</stringcontrol>
+	</template>
+	<!-- Section container -->
+	<template name="sub_ct_section">
+		<subwindow>
+			<anchored>
+				<top parent="active_spacer_top" anchor="bottom" relation="relative" offset="9" />
+				<left offset="50" />
+				<right offset="-5" />
+			</anchored>
+		</subwindow>
+	</template>
 
     <!-- Chat window padding adjustments. Source: template_windows.xml -->
     <template name="anchor_content_chatbox_top">
