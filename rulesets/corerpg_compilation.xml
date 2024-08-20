@@ -23,6 +23,20 @@
 	</template>
 
 	<!-- Source: common/template_records.xml -->
+    <template name="icon_record_header_nonid">
+		<icon_record_header_base name="nonid_icon">
+			<anchored>
+				<top offset="0" />
+			</anchored>
+			<icon>button_toolbar_id</icon>
+			<tooltip textres="library_recordtype_empty_nonid" />
+			<script>
+				function onInit()
+					setColor(UtilityManager.getControlFontColor(window, "name"));
+				end
+			</script>
+		</icon_record_header_base>
+	</template>
 	<template name="anchor_record_image_header_right">
 		<genericcontrol name="rightanchor">
 			<anchored height="0" width="0">

@@ -201,6 +201,7 @@
 	<icon name="button_modifiers_down" file="graphics/pngs/button_modifiers_down.png" />
 	<icon name="button_effects" file="graphics/pngs/button_effects.png" />
 	<icon name="button_effects_down" file="graphics/pngs/button_effects_down.png" />
+	<icon name="button_toolbar_id" file="graphics/pngs/button_toolbar_id.png" />
 	<icon name="button_toolbar_id_true" file="graphics/pngs/button_toolbar_id_true.png" />
 	<icon name="button_toolbar_id_false" file="graphics/pngs/button_toolbar_id_false.png" />
 	<icon name="button_toolbar_visibility_off" file="graphics/pngs/button_toolbar_visibility_off.png" />
