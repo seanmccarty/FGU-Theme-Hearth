@@ -33,6 +33,10 @@
 		<bitmap file="graphics/pngs/sidebar_dock_entry_down.png" />
 		<offset>12,12,12,12</offset>
 	</framedef>
+	<framedef name="sidebar_dock_entry_icon_down">
+		<bitmap file="graphics/pngs/sidebar_dock_entry_down.png" />
+		<offset>12,12,12,12</offset>
+	</framedef>
 
 
 	<!-- MasterIndex -->
