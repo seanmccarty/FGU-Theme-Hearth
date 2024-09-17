@@ -511,10 +511,10 @@
 	<template name="list_ctbox_base">
 		<list_content name="list">
 			<anchored>
-				<top offset="1" />
-				<left offset="-12" />
-				<right offset="-5" />
-				<bottom offset="-1" />
+				<top offset="5" />
+				<left offset="5" />
+				<right offset="-15" />
+				<bottom offset="-5" />
 			</anchored>
 			<datasource>.list</datasource>
 		</list_content>
@@ -524,48 +524,11 @@
 			<anchored offset="0,2" />
 		</windowtitlebar>
 	</template>
-    <template name="sub_content_framed_groupbox_ct">
-		<sub_content_framed_groupbox_base>
-			<anchored to="contentanchor">
-				<left offset="15" />
-				<right offset="-15" />
-			</anchored>
-            <frame name="groupbox" offset="34,13,34,13" />
-		</sub_content_framed_groupbox_base>
-	</template>
-	<template name="sub_ct_header_host">
-		<sub_content_framed_groupbox_ct name="sub_header">
-			<anchored>
-				<top relation="relative" offset="20" postoffset="10" />
-			</anchored>
-            <noscroll />
-			<class>sub_ct_header_host</class>
-		</sub_content_framed_groupbox_ct>
-	</template>
-	<template name="sub_ct_controls_host">
-		<sub_content_framed_groupbox_ct name="sub_controls">
-            <anchored>
-                <bottom parent="bottomanchor" relation="relative" offset="-10" postoffset="-10" />
-            </anchored>
-            <noscroll />
-            <class>sub_ct_controls_host</class>
-		</sub_content_framed_groupbox_ct>
-	</template>
 
-	<template name="anchor_content_ctbox_top">
-		<genericcontrol name="contentanchor">
-			<anchored height="0">
-				<top offset="22" />
-				<left offset="20" />
-				<right offset="-20" />
-			</anchored>
-			<disabled />
-		</genericcontrol>
-	</template>
 	<template name="anchor_content_ctbox_bottom">
 		<genericcontrol name="bottomanchor">
 			<!-- Distance of subfooter from bottom. -->
-			<anchored to="contentanchor" height="16">
+			<anchored to="contentanchor" height="20">
 				<bottom parent="" />
 				<left />
 				<right />
