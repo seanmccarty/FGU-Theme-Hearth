@@ -24,7 +24,7 @@
 		</script>
 	</windowclass>
 
-	<windowclass name="npc_combat" merge="join">
+	<windowclass name="npc_combat_top_2014" merge="join">
 		<sheetdata>
 			<stringcontrol name="npc_importantdeath_label">
 				<anchored to="actext" position="right" offset="-85,0" width="70" />

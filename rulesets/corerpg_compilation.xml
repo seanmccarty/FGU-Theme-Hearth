@@ -464,7 +464,7 @@
 			<anchored height="0">
 				<top offset="70" />
 				<left offset="30" />
-				<right offset="-30" />
+				<right offset="-15" />
 			</anchored>
 			<disabled />
 		</genericcontrol>
@@ -507,10 +507,65 @@
 			<disabled />
 		</genericcontrol>
 	</template>
+	<!-- Source: ct/ct_host.xml -->
+	<template name="list_ctbox_base">
+		<list_content name="list">
+			<anchored>
+				<top offset="1" />
+				<left offset="-12" />
+				<right offset="-5" />
+				<bottom offset="-1" />
+			</anchored>
+			<datasource>.list</datasource>
+		</list_content>
+	</template>
+	<template name="windowtitlebar_ctbox">
+		<windowtitlebar>
+			<anchored offset="0,2" />
+		</windowtitlebar>
+	</template>
+    <template name="sub_content_framed_groupbox_ct">
+		<sub_content_framed_groupbox_base>
+			<anchored to="contentanchor">
+				<left offset="15" />
+				<right offset="-15" />
+			</anchored>
+            <frame name="groupbox" offset="34,13,34,13" />
+		</sub_content_framed_groupbox_base>
+	</template>
+	<template name="sub_ct_header_host">
+		<sub_content_framed_groupbox_ct name="sub_header">
+			<anchored>
+				<top relation="relative" offset="20" postoffset="10" />
+			</anchored>
+            <noscroll />
+			<class>sub_ct_header_host</class>
+		</sub_content_framed_groupbox_ct>
+	</template>
+	<template name="sub_ct_controls_host">
+		<sub_content_framed_groupbox_ct name="sub_controls">
+            <anchored>
+                <bottom parent="bottomanchor" relation="relative" offset="-10" postoffset="-10" />
+            </anchored>
+            <noscroll />
+            <class>sub_ct_controls_host</class>
+		</sub_content_framed_groupbox_ct>
+	</template>
+
+	<template name="anchor_content_ctbox_top">
+		<genericcontrol name="contentanchor">
+			<anchored height="0">
+				<top offset="22" />
+				<left offset="20" />
+				<right offset="-20" />
+			</anchored>
+			<disabled />
+		</genericcontrol>
+	</template>
 	<template name="anchor_content_ctbox_bottom">
 		<genericcontrol name="bottomanchor">
 			<!-- Distance of subfooter from bottom. -->
-			<anchored to="contentanchor" height="20">
+			<anchored to="contentanchor" height="16">
 				<bottom parent="" />
 				<left />
 				<right />
@@ -518,18 +573,6 @@
 			<disabled />
 		</genericcontrol>
 	</template>
-	<!-- Source: ct/ct_host.xml -->
-	<windowclass name="combattracker_host" merge="join">
-		<sheetdata>
-			<list_ct_host name="list">
-				<!-- New list positioning.  Makes header offset. -->
-				<anchored>
-					<top offset="2" />
-					<bottom offset="0" />
-				</anchored>
-			</list_ct_host>
-		</sheetdata>
-	</windowclass>
 
 	<!-- Frame: recordsheet -->
 	<template name="close_recordsheet">
@@ -1053,8 +1096,8 @@
 	<template name="resize_ctbox">
 		<resize>
 			<anchored>
-				<right offset="20" />
-				<bottom offset="20" />
+				<right offset="40" />
+				<bottom offset="40" />
 			</anchored>
 		</resize>
 	</template>
