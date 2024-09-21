@@ -339,6 +339,10 @@
 		<bitmap file="graphics/pngs/fielddark.png" />
 		<offset>12,12,12,12</offset>
 	</framedef>
+	<framedef name="fieldrequired">
+		<bitmap file="graphics/pngs/field-cyan.png" />
+		<offset>12,12,12,12</offset>
+	</framedef>
 	<framedef name="fielddice">
 		<bitmap file="graphics/pngs/fielddice.png" />
 		<topleft rect="0,0,12,12" />
