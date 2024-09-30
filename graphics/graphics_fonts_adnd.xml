@@ -126,7 +126,7 @@
   </font>
 
   <font name="reference-bi-light">
-    <ttf file="graphics/fonts/Roboto-BoldItalic" name="Roboto Bold Italic" size="16" />
+    <ttf file="graphics/fonts/Roboto-BoldItalic.ttf" name="Roboto Bold Italic" size="16" />
     <color value="#DDDDDD" /> <!-- Replaceable Color: Secondary Foreground -->
   </font>
 
